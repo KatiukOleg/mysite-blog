@@ -16,7 +16,7 @@ from django.shortcuts import render
 #     template_name = 'post_detail.html'
 
 def home(response):
-    return HttpResponse("My home page")
+    return render(response, "blog/base.html", {})
 
 def experience(response):
     return render(response, "blog/experience.html", {})
