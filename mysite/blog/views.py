@@ -1,6 +1,7 @@
 from django.views import generic
 from .models import Post
-
+from django.http import HttpResponse
+from django.shortcuts import render
 
 class PostList(generic.ListView):
     """
@@ -13,3 +14,9 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+def experience(response):
+    return HttpResponse("My experience")
+
+def certifications(response):
+    return HttpResponse("My certifications")
