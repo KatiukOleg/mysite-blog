@@ -31,6 +31,7 @@ SECRET_KEY = 'django-insecure-gb#z*3$#%u!urp%b%z9vqd+tsyvue$0%l=puc0k(1uc6--+^!5
 DEBUG = True
 #DEBUG = config('DEBUG')
 
+# allowed hosts
 ALLOWED_HOSTS = []
 
 
