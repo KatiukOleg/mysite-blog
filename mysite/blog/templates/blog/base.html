@@ -25,13 +25,13 @@
 			color:#f1f1f1;
 		}	
  
-		.main{
+		.content{
 			margin-left:160px;
-			padding: 0px 10px;
+			padding-left: 300px;
 		}
  
 	</style>
-	<title>{% block title %}Tim's Site{% endblock %}</title>
+	<title>{% block title %}OK-DevOps Site{% endblock %}</title>
 </head>
  
 <body>
@@ -41,8 +41,11 @@
 		<a href="/certifications">Certifications</a>
 	</div>
  
-	{% block content %}
-	{% endblock %}
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
  
 </body>
 </html>

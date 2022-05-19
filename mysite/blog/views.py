@@ -16,10 +16,10 @@ from django.shortcuts import render
 #     template_name = 'post_detail.html'
 
 def home(response):
-    return render(response, "blog/base.html", {})
+    return render(response, "blog/home.html", {})
 
 def experience(response):
     return render(response, "blog/experience.html", {})
 
 def certifications(response):
-    return HttpResponse("My certifications")
+    return render(response, "blog/certifications.html", {})
