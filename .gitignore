@@ -132,4 +132,4 @@ dmypy.json
 .DS_Store
 
 # add dev_notes
-dev_notes
+dev_notes.txt
