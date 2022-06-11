@@ -133,3 +133,6 @@ dmypy.json
 
 # add dev_notes
 dev_notes.txt
+
+# add .terraform
+terraform/.terraform
