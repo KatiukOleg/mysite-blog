@@ -5,6 +5,7 @@ echo $awsuser
 
 echo "Start execute script ----->"
 
+#https://unix.stackexchange.com/questions/136794/how-to-use-sed-to-replace-all-characters-before-colon
 key=$(cat $HOME/creds-$awsuser | grep AccessKeyId | sed -e 's/[", ]//g; s/.*://')
 aws iam delete-access-key --access-key-id $key --user-name $awsuser
 
