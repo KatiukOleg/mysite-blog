@@ -132,7 +132,7 @@ dmypy.json
 .DS_Store
 
 # add dev_notes
-dev_notes.txt
+#dev_notes.txt
 
 # add .terraform
 terraform/.terraform
