@@ -24,4 +24,12 @@ fi
 echo "creating Access key and Secret Access key for $awsuser ..."
 aws iam create-access-key --user-name $awsuser > $HOME/creds-$awsuser
 
+# set environment variables
+key=$(cat $HOME/creds-$awsuser | grep AccessKeyId | sed -e 's/[", ]//g; s/.*://')
+secretKey=$(cat $HOME/creds-$awsuser | grep SecretAccessKey | sed -e 's/[", ]//g; s/.*://')
+echo "export AWS_ACCESS_KEY_ID=$key" >> $HOME/.bash_profile
+echo "export AWS_SECRET_ACCESS_KEY=$secretKey" >> $HOME/.bash_profile
+#source $HOME/.bash_profile
+. $HOME/.bash_profile
+
 echo "-----> Script is finished!"

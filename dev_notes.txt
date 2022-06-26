@@ -18,3 +18,9 @@ add this line in .bash_profile or .bashrc
 
 chmod 755 creds-django.usertest
 ./delete_creds.sh django.usertest
+
+# install packages for static storage
+pip install boto3
+pip install django-storages
+
+# list installed packages
