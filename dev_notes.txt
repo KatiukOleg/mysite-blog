@@ -12,6 +12,7 @@ export $AWS_DEFAULT_PROFILE
 
 AND 
 add this line in .bash_profile or .bashrc
+source $HOME/.bash_profile
 
 # run create_creds.sh
 ./create_creds.sh django.usertest
