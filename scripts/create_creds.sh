@@ -30,6 +30,7 @@ secretKey=$(cat $HOME/creds-$awsuser | grep SecretAccessKey | sed -e 's/[", ]//g
 echo "export AWS_ACCESS_KEY_ID=$key" >> $HOME/.bash_profile
 echo "export AWS_SECRET_ACCESS_KEY=$secretKey" >> $HOME/.bash_profile
 #source $HOME/.bash_profile
+#run this command manually. 
 . $HOME/.bash_profile
 
 echo "-----> Script is finished!"

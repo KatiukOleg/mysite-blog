@@ -25,3 +25,7 @@ pip install boto3
 pip install django-storages
 
 # list installed packages
+pip list OR python -m pip list
+
+# put static files into 3-rd party storage
+python manage.py collectstatic
