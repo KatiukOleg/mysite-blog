@@ -1,0 +1,31 @@
+#activate virtual env
+source $HOME/Documents/Projects/mysite-blog/venv/bin/activate
+
+#deactivate virtual env
+deactivate
+
+#run server
+python manage.py runserver
+
+# set Environment variable permanently
+export $AWS_DEFAULT_PROFILE
+
+AND 
+add this line in .bash_profile or .bashrc
+source $HOME/.bash_profile
+
+# run create_creds.sh
+./create_creds.sh django.usertest
+
+chmod 755 creds-django.usertest
+./delete_creds.sh django.usertest
+
+# install packages for static storage
+pip install boto3
+pip install django-storages
+
+# list installed packages
+pip list OR python -m pip list
+
+# put static files into 3-rd party storage
+python manage.py collectstatic

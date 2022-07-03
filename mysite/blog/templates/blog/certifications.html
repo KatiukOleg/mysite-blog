@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}
+My Certifications
+{% endblock %}
+
+{% block content %}
+<h1>My Certifications content</h1>
+<img src="{% static 'blog/images/terraform.png' %}" alt="Terraform Associate">
+<img src="{% static 'blog/images/AWS-CloudPractitioner-2020.png' %}" alt="AWS Cloud Practitioner">
+<img src="{% static 'blog/images/AWS-SolArchitect-Associate-2020.png' %}" alt="AWS Solutions Architect">
+<img src="{% static 'blog/images/AWS-Developer-Associate-2020.png' %}" alt="AWS Developer">
+<img src="{% static 'blog/images/AWS-SysOpAdmin-Associate-2020.png' %}" alt="AWS SysOps">
+<img src="{% static 'blog/images/azure-fundamentals-600x600.png' %}" alt="Azure Fundamentals">
+
+{% endblock %}
