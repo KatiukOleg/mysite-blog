@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket_for_static" {
-  bucket = "${var.Project}-${lower("${var.Environment}")}-static-1kom4kd"
+  bucket = "${var.Project}-${lower("${var.Environment}")}-${var.BucketUniqueSuffix}"
 
   tags = {
     Environment = "${var.Environment}"
@@ -31,4 +31,10 @@ resource "aws_s3_bucket_policy" "public_s3_policy" {
   ]
 }
 EOT  
+}
+
+resource "aws_ssm_parameter" "parameter_for_bucket" {
+  name = "${var.Project}-${lower("${var.Environment}")}-static-bucket"
+  type = "String"
+  value = "${var.Project}-${lower("${var.Environment}")}-${var.BucketUniqueSuffix}"
 }
