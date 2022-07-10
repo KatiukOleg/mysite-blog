@@ -22,7 +22,7 @@ else
 fi
 
 echo "creating Access key and Secret Access key for $awsuser ..."
-aws iam create-access-key --user-name $awsuser > $HOME/creds-$awsuser
+aws iam create-access-key --user-name $awsuser --profile $AWS_DEFAULT_PROFILE > $HOME/creds-$awsuser
 
 # set environment variables
 key=$(cat $HOME/creds-$awsuser | grep AccessKeyId | sed -e 's/[", ]//g; s/.*://')

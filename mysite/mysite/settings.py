@@ -14,6 +14,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 #from decouple import config
 from pathlib import Path
 import os
+import ssl
+import boto3
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -133,12 +136,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ENV = os.getenv('ENV')
 
+
 if ENV == 'AWS':
     # Values for static storage in AWS
     DEBUG = False
+    
+    session = boto3.Session(aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'), aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'), region_name="eu-north-1")
+    ssm = session.client('ssm')
+    BUCKET_OBJECT = ssm.get_parameter(Name='mysite-blog-dev-static-bucket')
+    BUCKET_VALUE = BUCKET_OBJECT['Parameter']['Value']
+    #print(BUCKET_VALUE)
+    #print(BUCKET_OBJECT['Parameter']['Value'])
+
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = 'mysite-blog-dev-static-1kom4kd'
+    AWS_STORAGE_BUCKET_NAME = BUCKET_VALUE
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
     AWS_S3_OBJECT_PARAMETERS = {
         'CacheControl': 'max-age=86400',
