@@ -136,3 +136,5 @@ dmypy.json
 
 # add .terraform
 terraform/.terraform
+
+secret_keys.txt

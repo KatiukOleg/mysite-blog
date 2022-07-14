@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gb#z*3$#%u!urp%b%z9vqd+tsyvue$0%l=puc0k(1uc6--+^!5'
+#SECRET_KEY = 'django-insecure-gb#z*3$#%u!urp%b%z9vqd+tsyvue$0%l=puc0k(1uc6--+^!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -148,6 +148,10 @@ if ENV == 'AWS':
     #print(BUCKET_VALUE)
     #print(BUCKET_OBJECT['Parameter']['Value'])
 
+    SECRET_KEY_OBJECT = ssm.get_parameter(Name='mysite-blog-dev-secret-key')
+    SECRET_KEY = SECRET_KEY_OBJECT['Parameter']['Value']
+
+    # Variables for django-storages - https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = BUCKET_VALUE

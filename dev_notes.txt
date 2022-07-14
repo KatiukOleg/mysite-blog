@@ -29,3 +29,6 @@ pip list OR python -m pip list
 
 # put static files into 3-rd party storage
 python manage.py collectstatic
+
+# generate new secret_key
+python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'

@@ -18,3 +18,7 @@ variable "BucketUniqueSuffix" {
   default = "static-1kom4kd"
 }
 
+variable "SecretKey" {
+  description = "Unique Secret Key"
+}
+

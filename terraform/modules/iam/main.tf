@@ -39,7 +39,10 @@ resource "aws_iam_policy" "managed_policy" {
         "ssm:List*"
       ],
       "Effect": "Allow",
-      "Resource": "${module.storage.static_bucket_parameter}"
+      "Resource": [
+        "${module.storage.static_bucket_parameter}",
+        "${module.storage.secret_key_parameter}"
+      ]
     },
     {
       "Action": [

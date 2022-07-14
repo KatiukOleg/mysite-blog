@@ -38,3 +38,9 @@ resource "aws_ssm_parameter" "parameter_for_bucket" {
   type = "String"
   value = "${var.Project}-${lower("${var.Environment}")}-${var.BucketUniqueSuffix}"
 }
+
+resource "aws_ssm_parameter" "parameter_for_secret_key" {
+  name = "${var.Project}-${lower("${var.Environment}")}-secret-key"
+  type = "SecureString"
+  value = "${var.SecretKey}"
+}
