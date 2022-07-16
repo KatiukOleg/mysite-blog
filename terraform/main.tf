@@ -12,5 +12,6 @@ module "iam" {
     Region = var.AWS_REGION
     Environment = var.Environment
     Project = var.Project
+    SecretKey = var.SecretKey
 }
 

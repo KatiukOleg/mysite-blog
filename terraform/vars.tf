@@ -12,3 +12,8 @@ variable "Project" {
   description = "Project name"
   default = "mysite-blog"
 }
+
+variable "SecretKey" {
+  description = "Unique Secret Key"
+  default = ""
+}

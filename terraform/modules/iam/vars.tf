@@ -9,3 +9,7 @@ variable "Environment" {
 variable "Project" {
   description = "Project Name"
 }
+
+variable "SecretKey" {
+  description = "Unique Secret Key"
+}

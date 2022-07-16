@@ -1,5 +1,6 @@
 module "storage" {
     source = "../storage"
+    SecretKey = var.SecretKey
 }
 
 resource "aws_iam_user" "django_user" {
