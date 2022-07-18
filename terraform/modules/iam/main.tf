@@ -1,5 +1,10 @@
 module "storage" {
     source = "../storage"
+    
+    Region = var.Region
+    Environment = var.Environment
+    Project = var.Project
+    BucketUniqueSuffix = var.BucketUniqueSuffix
     SecretKey = var.SecretKey
 }
 
