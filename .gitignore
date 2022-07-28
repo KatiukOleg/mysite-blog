@@ -138,3 +138,4 @@ dmypy.json
 terraform/.terraform
 
 secret_keys.txt
+security_warnings.txt
