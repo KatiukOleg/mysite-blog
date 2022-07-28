@@ -1,5 +1,11 @@
 module "storage" {
     source = "../storage"
+    
+    Region = var.Region
+    Environment = var.Environment
+    Project = var.Project
+    BucketUniqueSuffix = var.BucketUniqueSuffix
+    SecretKey = var.SecretKey
 }
 
 resource "aws_iam_user" "django_user" {
@@ -39,7 +45,10 @@ resource "aws_iam_policy" "managed_policy" {
         "ssm:List*"
       ],
       "Effect": "Allow",
-      "Resource": "${module.storage.static_bucket_parameter}/*"
+      "Resource": [
+        "${module.storage.static_bucket_parameter}",
+        "${module.storage.secret_key_parameter}"
+      ]
     },
     {
       "Action": [
