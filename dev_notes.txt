@@ -35,3 +35,6 @@ python manage.py shell -c 'from django.core.management import utils; print(utils
 
 # install admin-honeypot, currently not match django 4.0.
 pip install django-admin-honeypot
+
+# check security issues
+python manage.py check --deploy
