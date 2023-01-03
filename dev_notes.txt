@@ -38,3 +38,6 @@ pip install django-admin-honeypot
 
 # check security issues
 python manage.py check --deploy
+
+# create admin user
+python manage.py createsuperuser
