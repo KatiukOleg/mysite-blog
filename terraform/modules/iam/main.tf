@@ -9,7 +9,7 @@ module "storage" {
 }
 
 resource "aws_iam_user" "django_user" {
-  name = "django.usertest"
+  name = "django.usertest-${var.Environment}"
   path = "/"
 
   tags = {

@@ -15,10 +15,10 @@ add this line in .bash_profile or .bashrc
 source $HOME/.bash_profile
 
 # run create_creds.sh
-./create_creds.sh django.usertest
+./create_creds.sh django.usertest-${var.Environment}
 
-chmod 755 creds-django.usertest
-./delete_creds.sh django.usertest
+chmod 755 creds-django.usertest-${var.Environment}
+./delete_creds.sh django.usertest-${var.Environment}
 
 # install packages for static storage
 pip install boto3
@@ -38,3 +38,6 @@ pip install django-admin-honeypot
 
 # check security issues
 python manage.py check --deploy
+
+# create admin user
+python manage.py createsuperuser

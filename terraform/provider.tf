@@ -2,7 +2,7 @@ terraform {
   cloud {
     organization = "KatiukOlegOrg"
     workspaces {
-      name = "mysite-blog"
+      tags = ["mysite-blog"]
     }
   }
   
