@@ -8,12 +8,12 @@ session = boto3.Session(aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'), aws_se
 ssm = session.client('ssm')
 
 # Values for static storage in AWS
-BUCKET_OBJECT = ssm.get_parameter(Name='mysite-blog-dev-static-bucket')
+BUCKET_OBJECT = ssm.get_parameter(Name='mysite-blog-dev1-static-bucket')
 BUCKET_VALUE = BUCKET_OBJECT['Parameter']['Value']
 #print(BUCKET_VALUE)
 #print(BUCKET_OBJECT['Parameter']['Value'])
 
-SECRET_KEY_OBJECT = ssm.get_parameter(Name='mysite-blog-dev-secret-key')
+SECRET_KEY_OBJECT = ssm.get_parameter(Name='mysite-blog-dev1-secret-key')
 SECRET_KEY = SECRET_KEY_OBJECT['Parameter']['Value']
 
 # Variables for django-storages - https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html

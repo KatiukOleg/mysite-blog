@@ -1,7 +1,7 @@
 from .base import *
 import os
 
-if os.getenv('ENV') == 'DEV':
+if os.getenv('ENV') == 'DEV1':
     from .dev import *
 elif os.getenv('ENV') == 'LOCAL':
     from .local import *
